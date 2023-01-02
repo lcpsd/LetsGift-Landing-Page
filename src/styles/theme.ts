@@ -1,18 +1,15 @@
-import { ChakraProps, extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
     styles: {
         global: {
-            fontWeight: 'normal',
+            fontFamily: "Poppins",
+            fontWeight: '400',
             body: {
                 bg: 'primary',
                 color: 'primary',
             }
         }
-    },
-    fonts: {
-        heading: `'Poppins', sans-serif`,
-        body: `'Poppins', sans-serif`
     },
     colors: {
         primary: '#F3F3F3',
@@ -24,7 +21,8 @@ const theme = extendTheme({
         tertiary025: 'rgba(0, 209, 255, 0.25)',
         gradient1: 'linear-gradient(180deg, #00D1FF 0%, #7000FF 100%);',
         gradient2: 'linear-gradient(180deg, #7000FF 0%, #5E02D3 100%);',
+
     }
-} as ChakraProps)
+})
 
 export default theme
