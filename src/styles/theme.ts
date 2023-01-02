@@ -6,7 +6,7 @@ const theme = extendTheme({
             fontFamily: "Poppins",
             fontWeight: '400',
             body: {
-                bg: 'primary',
+                bg: 'secondaryDark',
                 color: 'primary',
             }
         }
