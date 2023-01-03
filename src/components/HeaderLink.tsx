@@ -28,12 +28,12 @@ export function HeaderLink({ title, link }: HeaderLinkProps) {
                         height: "2px",
                         width: "0%",
                         bottom: "0",
-                        left: "0",
+                        left: "-10%",
                         transition: "all 0.2s"
                     }}
                     _hover={{
                         "&::after": {
-                            width: "100%"
+                            width: "120%"
                         }
                     }}
                 />

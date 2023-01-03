@@ -6,7 +6,7 @@ interface ContainerProps extends ChakraProps {
 
 export function Container({ children, ...rest }: ContainerProps) {
     return (
-        <Flex w="100%" h="100%" justify="center" {...rest}>
+        <Flex w="100vw" h="100%" justify="center" {...rest}>
             {children}
         </Flex>
     )
