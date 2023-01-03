@@ -12,28 +12,30 @@ interface Menu {
 export function Menu({ isOpen, toggle }: Menu) {
     return (
         <Box>
-            <Icon
-                as={HiMenuAlt3}
-                position="absolute"
-                right={10}
-                top={10}
-                fontSize={50}
-                onClick={toggle}
-                zIndex={11}
-                transform={`scale(${!isOpen ? 1 : 0})`}
-                transition="all 0.2s"
-            />
-            <Icon
-                as={IoMdClose}
-                position="absolute"
-                right={10}
-                top={10}
-                fontSize={50}
-                onClick={toggle}
-                zIndex={11}
-                transition="all 0.2s"
-                transform={`scale(${!isOpen ? 0 : 1})`}
-            />
+            <Box visibility={{ base: "visible", lg: "hidden" }}>
+                <Icon
+                    as={HiMenuAlt3}
+                    position="absolute"
+                    right={10}
+                    top={10}
+                    fontSize={50}
+                    onClick={toggle}
+                    zIndex={11}
+                    transform={`scale(${!isOpen ? 1 : 0})`}
+                    transition="all 0.2s"
+                />
+                <Icon
+                    as={IoMdClose}
+                    position="absolute"
+                    right={10}
+                    top={10}
+                    fontSize={50}
+                    onClick={toggle}
+                    zIndex={11}
+                    transition="all 0.2s"
+                    transform={`scale(${!isOpen ? 0 : 1})`}
+                />
+            </Box>
             <Flex
                 bg={{ base: "secondary", lg: "transparent" }}
                 justify={{ base: "center", lg: "space-between" }}
@@ -49,7 +51,7 @@ export function Menu({ isOpen, toggle }: Menu) {
                 transition="all 0.2s ease-out"
             >
                 <Logo
-                    fontSize={{ base: "4xl", lg: "initial" }}
+                    fontSize={{ base: "4xl", lg: "2xl" }}
                     order={{ base: 2, lg: "initial" }}
                     mt={{ base: 10, lg: 0 }}
                 />
@@ -57,7 +59,7 @@ export function Menu({ isOpen, toggle }: Menu) {
                 <Flex
                     gap={5}
                     align="center"
-                    fontSize={{ base: "5xl", lg: "lg" }}
+                    fontSize={{ base: "5xl", lg: "2xl" }}
                     direction={{ base: "column", lg: "row" }}
                     onClick={toggle}
                 >
