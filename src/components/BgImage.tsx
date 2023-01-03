@@ -10,11 +10,11 @@ export function BgImage({ children, url }: BgImageProps) {
     return (
         <Flex
             bgImage={url}
-            bgSize="contain"
-            bgRepeat="no-repeat"
+            bgSize={{ base: "auto", lg: "contain" }}
             w="100vw"
             h="100vh"
             justify="center"
+            bgRepeat="no-repeat"
         >
             {children}
         </Flex>

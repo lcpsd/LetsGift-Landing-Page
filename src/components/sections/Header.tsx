@@ -13,27 +13,28 @@ export function HeaderSection() {
         <Section>
             <Menu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
-            <Flex h="100%" w="100%" zIndex="1" justify="center">
+            <Flex h="100%" w="100%" zIndex="1" justify="center" direction={{ base: "column", lg: "row" }} gap={{ base: 10, lg: 0 }}>
 
                 <Flex
                     flex="1"
-                    align="flex-start"
+                    align={{ base: "center", lg: "flex-start" }}
                     justify="center"
                     direction="column"
                     gap={5}
                 >
-                    <Box
-                        fontSize="95px"
+                    <Flex
+                        fontSize={{ base: "2.5rem", lg: "95px" }}
                         fontWeight="bold"
                         w="100%"
-                        lineHeight="96px"
-                        textTransform="uppercase">
-                        <Box>Presentes</Box>
-                        <Flex>
+                        textTransform="uppercase"
+                        direction="column"
+                    >
+                        <Text textAlign={{ base: "center", lg: "start" }}>Presentes</Text>
+                        <Flex textAlign="center" justify={{ base: "center", lg: "initial" }}>
                             que <Box color="tertiary" ml={5}>importam!</Box>
                         </Flex>
-                    </Box>
-                    <Text fontSize="32px">
+                    </Flex>
+                    <Text fontSize={{ base: "1.5rem", lg: "2rem" }} textAlign={{ base: "center", lg: "start" }}>
                         Nunca mais receba presentes ruins! Crie suas listas de presentes desejados e compartilhe com amigos e familiares.
                     </Text>
                     <Button
@@ -57,6 +58,6 @@ export function HeaderSection() {
                 </Flex>
 
             </Flex>
-        </Section>
+        </Section >
     )
 }
