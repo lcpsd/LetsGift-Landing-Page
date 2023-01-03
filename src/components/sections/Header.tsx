@@ -34,7 +34,7 @@ export function HeaderSection() {
                             que <Box color="tertiary" ml={5}>importam!</Box>
                         </Flex>
                     </Flex>
-                    <Text fontSize={{ base: "1.5rem", lg: "2rem" }} textAlign={{ base: "center", lg: "start" }}>
+                    <Text fontSize={{ base: "1rem", lg: "2rem" }} textAlign={{ base: "center", lg: "start" }}>
                         Nunca mais receba presentes ruins! Crie suas listas de presentes desejados e compartilhe com amigos e familiares.
                     </Text>
                     <Button

@@ -12,13 +12,12 @@ interface Menu {
 export function Menu({ isOpen, toggle }: Menu) {
     return (
         <Box>
-            <Box visibility={{ base: "visible", lg: "hidden" }}>
+            <Box visibility={{ base: "visible", lg: "hidden" }} fontSize={40}>
                 <Icon
                     as={HiMenuAlt3}
                     position="absolute"
-                    right={10}
-                    top={10}
-                    fontSize={50}
+                    right={5}
+                    top={5}
                     onClick={toggle}
                     zIndex={11}
                     transform={`scale(${!isOpen ? 1 : 0})`}
@@ -27,9 +26,8 @@ export function Menu({ isOpen, toggle }: Menu) {
                 <Icon
                     as={IoMdClose}
                     position="absolute"
-                    right={10}
-                    top={10}
-                    fontSize={50}
+                    right={5}
+                    top={5}
                     onClick={toggle}
                     zIndex={11}
                     transition="all 0.2s"
