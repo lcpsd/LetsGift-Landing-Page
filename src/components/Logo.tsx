@@ -1,9 +1,18 @@
-import { Text } from "@chakra-ui/react";
+import { ChakraProps, Text } from "@chakra-ui/react";
 
-export function Logo() {
+interface LogoProps extends ChakraProps {
+
+}
+
+export function Logo({ ...rest }: LogoProps) {
 
     return (
-        <Text fontWeight="800" color="tertiary" fontSize="2xl">
+        <Text
+            fontWeight="800"
+            color="tertiary"
+            fontSize="2xl"
+            {...rest}
+        >
             LetsGift
         </Text>
     )
