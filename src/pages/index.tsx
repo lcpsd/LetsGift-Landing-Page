@@ -11,11 +11,19 @@ export default function Home() {
 
         <Section>
           <Header />
-          <Flex h="100%" w="100%" zIndex="1">
+          <Flex h="100%" w="100%" zIndex="1" justify="center">
 
-            <Flex flex="1" align="center" justify="center" direction="column">
-              <Box fontSize="100px">Presentesque
-                <Box>importam</Box>!
+            <Flex flex="1.5" align="center" justify="center" direction="column">
+              <Box
+                fontSize="80px"
+                fontWeight="bold"
+                w="100%"
+                lineHeight="80px"
+                textTransform="uppercase">
+                <Box>Presentes</Box>
+                <Flex>
+                  que <Box color="tertiary">importam!</Box>
+                </Flex>
               </Box>
             </Flex>
 

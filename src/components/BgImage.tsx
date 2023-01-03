@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 interface BgImageProps {
     url: string;
@@ -8,13 +8,15 @@ interface BgImageProps {
 export function BgImage({ children, url }: BgImageProps) {
 
     return (
-        <Box
+        <Flex
             bgImage={url}
-            bgPos="top"
-            bgSize="cover"
+            bgSize="contain"
+            bgRepeat="no-repeat"
             w="100vw"
-            h="100vh">
+            h="100vh"
+            justify="center"
+        >
             {children}
-        </Box>
+        </Flex>
     )
 }
