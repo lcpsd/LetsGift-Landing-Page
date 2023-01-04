@@ -1,0 +1,21 @@
+import { Flex, Text } from "@chakra-ui/react";
+
+export function Footer() {
+
+    const currentYear = new Date().getFullYear()
+
+    return (
+        <Flex
+            align="center"
+            justify="center"
+            color="primary"
+            bg="secondaryDark"
+            h="80px"
+            w="100%"
+        >
+            <Text>
+                Copyright Letsgift {currentYear}. Todos os direitos reservados.
+            </Text>
+        </Flex>
+    )
+}
