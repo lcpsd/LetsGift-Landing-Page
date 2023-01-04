@@ -10,10 +10,14 @@ import { HowWorksSection } from "../components/sections/HowWorks";
 export default function Home() {
 
   return (
-    <Container scrollSnapType="y mandatory" scrollBehavior="smooth">
+    <Container overflowX="hidden">
       <Indicator />
 
-      <BgImage url="/images/vector01.svg">
+      <BgImage
+        url="/images/vector01.svg"
+        bgColor={{ base: "secondary", lg: "transparent" }}
+        bgSize={{ base: "0, 0", lg: "100%, 100%" }}
+      >
         <HeaderSection />
       </BgImage>
 
