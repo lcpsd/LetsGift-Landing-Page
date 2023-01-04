@@ -26,6 +26,8 @@ export function AboutSection() {
                     whileInView={{ height: "100%" }}
                     transition={{ duration: 1 }}
                 />
+
+                {/* Text */}
                 <MotionBox
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -45,6 +47,7 @@ export function AboutSection() {
                 </MotionBox>
             </Flex>
 
+            {/* Vector */}
             <Flex flex={1.5} justify="center" align="center">
                 <MotionImage
                     src="/images/dev.svg"

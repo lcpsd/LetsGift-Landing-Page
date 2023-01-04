@@ -6,7 +6,7 @@ interface SectionProps extends ChakraStyledOptions, ChakraProps {
 
 export function Section({ children, ...rest }: SectionProps) {
     return (
-        <Flex as="section" w="100%" h="100vh" maxW="1800px" justify="center" direction="column" p={10} {...rest}>
+        <Flex as="section" w="100%" h="100%" minH="100vh" maxW="1800px" justify="center" direction="column" p={10} {...rest}>
             {children}
         </Flex>
     )

@@ -1,9 +1,11 @@
-import { Flex, Img, Text } from "@chakra-ui/react";
+import { Box, Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
 import { BgImage } from "../components/BgImage";
+import { Card } from "../components/Card";
 import { Container } from "../components/Container";
 import { Indicator } from "../components/Indicator";
 import { Section } from "../components/Section";
 import { AboutSection } from "../components/sections/About";
+import { FeaturesSection } from "../components/sections/Features";
 import { HeaderSection } from "../components/sections/Header";
 import { HowWorksSection } from "../components/sections/HowWorks";
 
@@ -31,6 +33,7 @@ export default function Home() {
         <HowWorksSection />
       </BgImage>
 
+      <FeaturesSection />
     </Container >
   )
 }
