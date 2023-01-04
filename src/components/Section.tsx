@@ -1,6 +1,6 @@
-import { ChakraProps, Flex } from "@chakra-ui/react";
+import { ChakraProps, ChakraStyledOptions, Flex } from "@chakra-ui/react";
 
-interface SectionProps extends ChakraProps {
+interface SectionProps extends ChakraStyledOptions, ChakraProps {
     children: JSX.Element | JSX.Element[];
 }
 
