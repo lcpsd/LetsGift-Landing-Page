@@ -8,6 +8,7 @@ import { AboutSection } from "../components/sections/About";
 import { FeaturesSection } from "../components/sections/Features";
 import { HeaderSection } from "../components/sections/Header";
 import { HowWorksSection } from "../components/sections/HowWorks";
+import { StartNowSection } from "../components/sections/StartNow";
 
 export default function Home() {
 
@@ -34,6 +35,8 @@ export default function Home() {
       </BgImage>
 
       <FeaturesSection />
+
+      <StartNowSection />
     </Container >
   )
 }

@@ -12,17 +12,18 @@ export function HeaderSection() {
         <Section>
             <Menu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
-            <Flex h="100%" w="100%" zIndex="1" justify="center" direction={{ base: "column", lg: "row" }} gap={{ base: 10, lg: 0 }}>
+            <Flex h="100% " w="100 % " zIndex="1" justify="center" direction={{ base: "column", lg: "row" }} gap={{ base: 10, lg: 0 }}>
 
-                <Flex
+                < Flex
                     flex="1"
-                    align={{ base: "center", lg: "flex-start" }}
+                    align={{ base: "center", lg: "flex-start" }
+                    }
                     justify="center"
                     direction="column"
                     gap={5}
                 >
                     {/* Title */}
-                    <MotionFlex
+                    < MotionFlex
                         initial={{ y: -50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         fontSize={{ base: "2.5rem", lg: "4rem", xl: "5rem" }}
@@ -35,10 +36,10 @@ export function HeaderSection() {
                         <Flex textAlign="center" justify={{ base: "center", lg: "initial" }}>
                             que <Box color="tertiary" ml={5}>importam!</Box>
                         </Flex>
-                    </MotionFlex>
+                    </MotionFlex >
 
                     {/* Subtitle */}
-                    <MotionText
+                    < MotionText
                         fontSize={{ base: "1rem", lg: "1.5rem", xl: "2rem" }}
                         textAlign={{ base: "center", lg: "start" }}
                         initial={{ y: -50, opacity: 0 }}
@@ -46,10 +47,10 @@ export function HeaderSection() {
                         transition={{ delay: 0.2 }}
                     >
                         Nunca mais receba presentes ruins! Crie suas listas de presentes desejados e compartilhe com amigos e familiares.
-                    </MotionText>
+                    </MotionText >
 
                     {/* Button */}
-                    <MotionButton
+                    < MotionButton
                         bg="tertiary"
                         colorScheme="purple"
                         fontWeight="semibold"
@@ -62,12 +63,12 @@ export function HeaderSection() {
                         transition={{ delay: 0.3 }}
                     >
                         Entrar
-                    </MotionButton>
+                    </MotionButton >
 
-                </Flex>
+                </Flex >
 
                 {/* Vector */}
-                <MotionFlex
+                < MotionFlex
                     flex="1"
                     align="center"
                     justify="center"
@@ -79,9 +80,9 @@ export function HeaderSection() {
                         src="/images/vector02.svg"
                         h="100%"
                     />
-                </MotionFlex>
+                </MotionFlex >
 
-            </Flex>
+            </Flex >
         </Section >
     )
 }

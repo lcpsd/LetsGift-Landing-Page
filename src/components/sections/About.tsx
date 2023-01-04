@@ -1,17 +1,18 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { MotionBox, MotionImage } from "../../utils/chakraFramer";
+import { MotionBox, MotionFlex, MotionImage } from "../../utils/chakraFramer";
 import { Section } from "../Section";
 
 export function AboutSection() {
 
     return (
-        <Section direction={{ base: "column", lg: "row" }} gap={{ base: 2, lg: 5 }}>
+        <Section direction={{ base: "column", lg: "row" }} gap={{ base: 2, lg: 5 }} align="center">
             <Flex
                 flex={1}
                 direction="column"
                 position="relative"
                 h="100%"
                 justify="center"
+                align="center"
                 pl={10}
             >
                 <MotionBox
@@ -45,10 +46,10 @@ export function AboutSection() {
                         </Text>
                     </Box>
                 </MotionBox>
-            </Flex>
+            </Flex >
 
             {/* Vector */}
-            <Flex flex={1.5} justify="center" align="center">
+            <Flex flex={1.5} justify="center" align="center" >
                 <MotionImage
                     src="/images/dev.svg"
                     h="80%"
@@ -62,6 +63,6 @@ export function AboutSection() {
                     }}
                 />
             </Flex>
-        </Section>
+        </Section >
     )
 }
