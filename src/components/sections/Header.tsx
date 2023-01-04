@@ -1,9 +1,7 @@
-import { Box, Button, Flex, Img, Text, Icon } from "@chakra-ui/react";
+import { Box, Button, Flex, Img, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { Menu } from "../Menu";
 import { Section } from "../Section";
-import { HiMenuAlt3 } from "react-icons/hi"
-import { IoMdClose } from "react-icons/io";
 
 export function HeaderSection() {
 

@@ -12,7 +12,7 @@ export function Indicator() {
             bottom={0}
             direction="column"
             h="100%"
-            w="15px"
+            w="10px"
             justify="center"
             gap={5}
         >
@@ -21,7 +21,7 @@ export function Indicator() {
                     <Box
                         key={index}
                         rounded="md"
-                        h="100px"
+                        h="60px"
                         bg={index == position ? "tertiary" : "tertiary025"}
                         transition="all 0.5s"
                     />

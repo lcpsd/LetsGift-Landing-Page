@@ -9,6 +9,7 @@ const theme = extendTheme({
                 bg: 'primary',
                 color: 'primary',
             }
+
         }
     },
     colors: {

@@ -7,7 +7,7 @@ import { HeaderSection } from "../components/sections/Header";
 export default function Home() {
 
   return (
-    <Container>
+    <Container scrollSnapType="y mandatory" scrollBehavior="smooth">
       <Indicator />
 
       <BgImage url="/images/vector01.svg">
