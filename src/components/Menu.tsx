@@ -3,6 +3,7 @@ import { HeaderLink } from "./HeaderLink";
 import { Logo } from "./Logo";
 import { IoMdClose } from "react-icons/io"
 import { HiMenuAlt3 } from "react-icons/hi";
+import { MotionBox } from "../utils/chakraFramer";
 
 interface Menu {
     toggle: () => void;
@@ -12,6 +13,7 @@ interface Menu {
 export function Menu({ isOpen, toggle }: Menu) {
     return (
         <Box>
+            {/* Mobile Menu Button */}
             <Box visibility={{ base: "visible", lg: "hidden" }} fontSize={40}>
                 <Icon
                     as={HiMenuAlt3}
@@ -34,6 +36,8 @@ export function Menu({ isOpen, toggle }: Menu) {
                     transform={`scale(${!isOpen ? 0 : 1})`}
                 />
             </Box>
+
+            {/* Menu options */}
             <Flex
                 bg={{ base: "secondary", lg: "transparent" }}
                 justify={{ base: "center", lg: "space-between" }}
@@ -48,12 +52,14 @@ export function Menu({ isOpen, toggle }: Menu) {
                 direction={{ base: "column", lg: "row" }}
                 transition="all 0.2s ease-out"
             >
+                {/* Logo */}
                 <Logo
                     fontSize={{ base: "4xl", lg: "2xl" }}
                     order={{ base: 2, lg: "initial" }}
                     mt={{ base: 10, lg: 0 }}
                 />
 
+                {/* Options */}
                 <Flex
                     gap={5}
                     align="center"
@@ -61,10 +67,37 @@ export function Menu({ isOpen, toggle }: Menu) {
                     direction={{ base: "column", lg: "row" }}
                     onClick={toggle}
                 >
-                    <HeaderLink title="Início" link="" />
-                    <HeaderLink title="Sobre" link="" />
-                    <HeaderLink title="Como Funciona" link="" />
-                    <HeaderLink title="Comece" link="" />
+                    <MotionBox
+                        initial={{ x: 50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                    >
+                        <HeaderLink title="Início" link="" />
+                    </MotionBox>
+
+                    <MotionBox
+                        initial={{ x: 50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.6 }}
+                    >
+                        <HeaderLink title="Sobre" link="" />
+                    </MotionBox>
+
+                    <MotionBox
+                        initial={{ x: 50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.7 }}
+                    >
+                        <HeaderLink title="Como Funciona" link="" />
+                    </MotionBox>
+
+                    <MotionBox
+                        initial={{ x: 50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.8 }}
+                    >
+                        <HeaderLink title="Comece" link="" />
+                    </MotionBox>
                 </Flex>
             </Flex>
         </Box>
