@@ -22,6 +22,8 @@ export function Indicator() {
                         key={index}
                         rounded="md"
                         h="60px"
+                        border="1px"
+                        borderColor={index == position ? "white" : "transparent"}
                         bg={index == position ? "tertiary" : "tertiary025"}
                         transition="all 0.5s"
                     />
