@@ -36,7 +36,7 @@ export function StartNowSection() {
                 </Text>
 
                 <Text
-                    fontSize={{ base: "1.1rem", lg: "1.8rem" }}
+                    fontSize="1.5rem"
                     color="white"
                     textAlign={{ base: "center", lg: "left" }}
                 >

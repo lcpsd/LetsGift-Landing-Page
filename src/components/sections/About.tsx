@@ -35,7 +35,7 @@ export function AboutSection() {
                     transition={{ duration: 0.5, ease: "easeIn" }}
                 >
                     <Text fontSize={{ base: "2rem", lg: "3rem" }} color="secondary" fontWeight="bold">Sobre Nós</Text>
-                    <Box fontSize={{ base: "1.1rem", lg: "1.8rem" }} color="quaternary">
+                    <Box fontSize="1.5rem" color="quaternary">
 
                         <Text>
                             O Letsgift é uma plataforma que permite criar listas de presentes desejados e compartilhá-las com amigos e familiares.

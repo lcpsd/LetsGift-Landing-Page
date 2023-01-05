@@ -14,7 +14,7 @@ export function HowWorksSection() {
             <Flex
                 align="center"
                 justify="center"
-                flex={1}
+                flex={1.5}
                 order={{ base: 1, lg: 0 }}
             >
                 <MotionImage
@@ -60,7 +60,7 @@ export function HowWorksSection() {
                     Como Funciona
                 </Text>
 
-                <Text fontSize={{ base: "1.1rem", lg: "1.8rem" }} color="white" textAlign="right">
+                <Text fontSize="1.5rem" color="white" textAlign="right">
                     Para usar o Letsgift, basta fazer login com sua conta Google e começar a criar suas listas de presentes. É possível criar quantas listas quiser, dependendo das ocasiões e dos seus gostos pessoais.
 
                     Quem está presenteando também pode pagar os presentes por porcentagem, fazendo com que outras pessoas possam dividir o valor do presente entre si.
