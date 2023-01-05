@@ -1,4 +1,4 @@
-import { Box, ChakraProps, ChakraStyledOptions, Flex } from "@chakra-ui/react";
+import { Box, ChakraProps, ChakraStyledOptions, Flex, Img } from "@chakra-ui/react";
 
 interface BgImageProps extends ChakraProps, ChakraStyledOptions {
     url: string;
@@ -9,14 +9,20 @@ export function BgImage({ children, url, ...rest }: BgImageProps) {
 
     return (
         <Flex
-            bgImage={url}
             w="100vw"
             h="100%"
-            minH="100vh"
-            justify="center"
-            bgRepeat="no-repeat"
+            pointerEvents="none"
+            position="relative"
             {...rest}
         >
+            <Img
+                src={url} h="100vh"
+                zIndex={-1000}
+                position="absolute"
+                left={0}
+                top={0}
+                visibility={{ base: "hidden", lg: "visible" }}
+            />
             {children}
         </Flex>
     )

@@ -9,10 +9,7 @@ export function StartNowSection() {
             gap={5}
             direction={{ base: "column", lg: "row" }}
             h={{ base: "100%", lg: "100vh" }}
-            bgColor={{ base: "secondary", lg: "transparent" }}
-            bgImage={{ base: "", lg: "/images/vector6.svg" }}
-            bgRepeat="no-repeat"
-            bgSize="100%, 100%"
+            bgColor={{ base: "secondaryDark", lg: "transparent" }}
         >
             {/* Text */}
             <MotionFlex

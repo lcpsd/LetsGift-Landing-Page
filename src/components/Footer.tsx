@@ -9,7 +9,7 @@ export function Footer() {
             align="center"
             justify="center"
             color="primary"
-            bg="secondaryDark"
+            bg="secondary"
             h="80px"
             w="100%"
         >

@@ -12,9 +12,9 @@ export function HeaderSection() {
         <Section>
             <Menu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
-            <Flex h="100% " w="100 % " zIndex="1" justify="center" direction={{ base: "column", lg: "row" }} gap={{ base: 10, lg: 0 }}>
+            <Flex h="100% " w="100%" zIndex="1" justify="center" direction={{ base: "column", lg: "row" }} gap={{ base: 10, lg: 0 }}>
 
-                < Flex
+                <Flex
                     flex="1"
                     align={{ base: "center", lg: "flex-start" }
                     }
@@ -23,7 +23,7 @@ export function HeaderSection() {
                     gap={5}
                 >
                     {/* Title */}
-                    < MotionFlex
+                    <MotionFlex
                         initial={{ y: -50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         fontSize={{ base: "2.5rem", lg: "4rem", xl: "5rem" }}
@@ -39,7 +39,7 @@ export function HeaderSection() {
                     </MotionFlex >
 
                     {/* Subtitle */}
-                    < MotionText
+                    <MotionText
                         fontSize={{ base: "1rem", lg: "1.5rem", xl: "2rem" }}
                         textAlign={{ base: "center", lg: "start" }}
                         initial={{ y: -50, opacity: 0 }}
@@ -50,7 +50,7 @@ export function HeaderSection() {
                     </MotionText >
 
                     {/* Button */}
-                    < MotionButton
+                    <MotionButton
                         bg="tertiary"
                         colorScheme="purple"
                         fontWeight="semibold"
@@ -65,16 +65,17 @@ export function HeaderSection() {
                         Entrar
                     </MotionButton >
 
-                </Flex >
+                </Flex>
 
                 {/* Vector */}
-                < MotionFlex
+                <MotionFlex
                     flex="1"
                     align="center"
                     justify="center"
                     initial={{ x: 50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
+                    pointerEvents="none"
                 >
                     <Img
                         src="/images/vector02.svg"

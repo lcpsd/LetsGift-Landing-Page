@@ -21,7 +21,6 @@ export default function Home() {
         <BgImage
           url="/images/vector01.svg"
           bgColor={{ base: "secondary", lg: "transparent" }}
-          bgSize={{ base: "0, 0", lg: "100%, 100%" }}
         >
           <HeaderSection />
         </BgImage>
@@ -38,9 +37,13 @@ export default function Home() {
 
         <FeaturesSection />
 
-        <StartNowSection />
+        <BgImage
+          url="/images/vector6.svg"
+        >
+          <StartNowSection />
+        </BgImage>
+        <Footer />
       </Container >
-      <Footer />
     </>
   )
 }
