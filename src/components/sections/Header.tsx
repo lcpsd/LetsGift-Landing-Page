@@ -16,8 +16,7 @@ export function HeaderSection() {
 
                 <Flex
                     flex="1"
-                    align={{ base: "center", lg: "flex-start" }
-                    }
+                    align={{ base: "center", lg: "flex-start" }}
                     justify="center"
                     direction="column"
                     gap={5}
@@ -40,7 +39,7 @@ export function HeaderSection() {
 
                     {/* Subtitle */}
                     <MotionText
-                        fontSize={{ base: "1rem", lg: "1.5rem", xl: "2rem" }}
+                        fontSize={{ base: "1.5rem", lg: "2rem", xl: "2rem" }}
                         textAlign={{ base: "center", lg: "start" }}
                         initial={{ y: -50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}

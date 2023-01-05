@@ -20,7 +20,7 @@ export default function Home() {
 
         <BgImage
           url="/images/vector01.svg"
-          bgColor={{ base: "secondary", lg: "transparent" }}
+          bgColor={{ base: "secondaryDark", lg: "transparent" }}
         >
           <HeaderSection />
         </BgImage>

@@ -11,7 +11,6 @@ export function BgImage({ children, url, ...rest }: BgImageProps) {
         <Flex
             w="100vw"
             h="100%"
-            pointerEvents="none"
             position="relative"
             {...rest}
         >
@@ -22,6 +21,7 @@ export function BgImage({ children, url, ...rest }: BgImageProps) {
                 left={0}
                 top={0}
                 visibility={{ base: "hidden", lg: "visible" }}
+                pointerEvents="none"
             />
             {children}
         </Flex>
