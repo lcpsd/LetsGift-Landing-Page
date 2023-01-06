@@ -7,7 +7,7 @@ import { client } from "../../services/prismicio";
 import { MotionBox, MotionImage } from "../../utils/chakraFramer";
 import { Section } from "../Section";
 
-interface AboutTextProps {
+interface prismicTextProps {
     title: string;
     description: [];
     vectorUrl: string;
@@ -16,7 +16,7 @@ interface AboutTextProps {
 export function AboutSection() {
 
     const { setPosition } = useSections()
-    const [aboutText, setAboutText] = useState<AboutTextProps>({} as AboutTextProps)
+    const [text, setText] = useState<prismicTextProps>({} as prismicTextProps)
 
     async function fetchTextData() {
         const allDocs = await client.getAllByType("aboutdata")
@@ -27,9 +27,7 @@ export function AboutSection() {
             vectorUrl: allDocs[0].data.vector.url
         }
 
-        console.log(sanitize)
-
-        setAboutText(sanitize)
+        setText(sanitize)
     }
 
     useEffect(() => {
@@ -73,12 +71,12 @@ export function AboutSection() {
                         transition={{ duration: 0.5, ease: "easeIn" }}
                     >
                         <Text fontSize={{ base: "2rem", lg: "3rem" }} color="secondary" fontWeight="bold">
-                            {aboutText.title}
+                            {text?.title}
                         </Text>
                         <Box fontSize="1.5rem" color="quaternary">
 
                             <PrismicRichText
-                                field={aboutText?.description}
+                                field={text?.description}
                             />
                         </Box>
                     </MotionBox>

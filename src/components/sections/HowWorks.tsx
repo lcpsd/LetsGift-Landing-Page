@@ -1,12 +1,38 @@
 import { Flex, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { InView } from "react-intersection-observer";
 import { useSections } from "../../context/Sections";
+import { client } from "../../services/prismicio";
 import { MotionBox, MotionFlex, MotionImage } from "../../utils/chakraFramer";
 import { Section } from "../Section";
+
+interface prismicTextProps {
+    title: string;
+    description: [];
+    vectorUrl: string;
+}
 
 export function HowWorksSection() {
 
     const { setPosition } = useSections()
+
+    const [text, setText] = useState<prismicTextProps>({} as prismicTextProps)
+
+    async function fetchTextData() {
+        const allDocs = await client.getAllByType("howworksdata")
+
+        const sanitize = {
+            title: allDocs[0].data.title[0].text,
+            description: allDocs[0].data.description,
+            vectorUrl: allDocs[0].data.vector.url
+        }
+
+        setText(sanitize)
+    }
+
+    useEffect(() => {
+        fetchTextData()
+    }, [])
 
     return (
         <InView as="div" onChange={(inView, entry) => inView && setPosition(2)} threshold={0.2}>
