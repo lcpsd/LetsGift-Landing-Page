@@ -51,7 +51,7 @@ export function HowWorksSection() {
                     order={{ base: 1, lg: 0 }}
                 >
                     <MotionImage
-                        src="/images/maintenance.svg"
+                        src={text.vectorUrl}
                         h="80%"
                         initial={{ y: 20 }}
                         animate={{ y: -20 }}

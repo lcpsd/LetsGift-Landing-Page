@@ -80,7 +80,7 @@ export function FeaturesSection() {
                 >
 
                     <MotionImage
-                        src="/images/vector4.svg"
+                        src="/vector4.svg"
                         zIndex={-10}
                         position="absolute"
                         w="100%"
@@ -95,7 +95,7 @@ export function FeaturesSection() {
                     />
 
                     <MotionImage
-                        src="/images/vector5.svg"
+                        src="/vector5.svg"
                         zIndex={-10}
                         position="absolute"
                         w="100%"
@@ -111,7 +111,7 @@ export function FeaturesSection() {
                     />
 
                     <MotionImage
-                        src="/images/star.svg"
+                        src="/star.svg"
                         position="absolute"
                         left={8}
                         bottom={-10}
@@ -127,7 +127,7 @@ export function FeaturesSection() {
                     />
 
                     <MotionImage
-                        src="/images/star.svg"
+                        src="/star.svg"
                         position="absolute"
                         right={10}
                         top={-10}

@@ -85,7 +85,7 @@ export function AboutSection() {
                 {/* Vector */}
                 <Flex flex={1.5} justify="center" align="center" >
                     <MotionImage
-                        src="/images/dev.svg"
+                        src={text.vectorUrl}
                         h="80%"
                         initial={{ y: 20 }}
                         animate={{ y: -20 }}
