@@ -1,8 +1,9 @@
-import { useSectionPos } from "../hooks/useSectionPos"
 import { Box, Flex } from "@chakra-ui/react";
+import { Link } from "react-scroll";
+import { useSections } from "../context/Sections";
 
 export function Indicator() {
-    const { position, total } = useSectionPos()
+    const { sections, position } = useSections()
 
     return (
         <Flex
@@ -15,19 +16,40 @@ export function Indicator() {
             w="10px"
             justify="center"
             gap={5}
+            zIndex={100}
         >
             {
-                [...Array(total)].map((_, index) => (
-                    <Box
-                        key={index}
-                        rounded="md"
-                        h="60px"
-                        border="1px"
-                        borderColor={index == position ? "white" : "transparent"}
-                        bg={index == position ? "tertiary" : "tertiary025"}
-                        transition="all 0.5s"
-                    />
-                ))
+                sections?.map((node, index) => {
+
+                    console.log(`Index: ${index}, position: ${position}`)
+
+                    return (
+                        <Box
+                            key={index}
+                            as={Link}
+                            position="relative"
+                            to={node?.id}
+                            spy={true}
+                            smooth={true}
+                            hashSpy={true}
+                            offset={50}
+                            duration={500}
+                            isDynamic={true}
+                            ignoreCancelEvents={false}
+                        >
+                            <Box
+                                rounded="md"
+                                h="60px"
+                                w="100%"
+                                border="1px"
+                                borderColor={index == position ? "white" : "transparent"}
+                                bg={index == position ? "tertiary" : "tertiary025"}
+                                transition="all 0.5s"
+                                cursor="pointer"
+                            />
+                        </Box>
+                    )
+                })
             }
         </Flex>
     )

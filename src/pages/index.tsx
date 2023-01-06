@@ -1,4 +1,5 @@
 import { Box, Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { BgImage } from "../components/BgImage";
 import { Card } from "../components/Card";
 import { Container } from "../components/Container";

@@ -11,10 +11,11 @@ interface Menu {
 }
 
 export function Menu({ isOpen, toggle }: Menu) {
+
     return (
         <Box>
             {/* Mobile Menu Button */}
-            <Box visibility={{ base: "visible", lg: "hidden" }} fontSize={40}>
+            <Box visibility={{ base: "visible", lg: "hidden" }} fontSize={40} cursor="pointer">
                 <Icon
                     as={HiMenuAlt3}
                     position="absolute"
@@ -72,7 +73,7 @@ export function Menu({ isOpen, toggle }: Menu) {
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ delay: 0.5 }}
                     >
-                        <HeaderLink title="Início" link="" />
+                        <HeaderLink title="Início" link="header" />
                     </MotionBox>
 
                     <MotionBox
@@ -80,7 +81,7 @@ export function Menu({ isOpen, toggle }: Menu) {
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ delay: 0.6 }}
                     >
-                        <HeaderLink title="Sobre" link="" />
+                        <HeaderLink title="Sobre" link="about" />
                     </MotionBox>
 
                     <MotionBox
@@ -88,7 +89,7 @@ export function Menu({ isOpen, toggle }: Menu) {
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ delay: 0.7 }}
                     >
-                        <HeaderLink title="Como Funciona" link="" />
+                        <HeaderLink title="Como Funciona" link="howWorks" />
                     </MotionBox>
 
                     <MotionBox
@@ -96,7 +97,7 @@ export function Menu({ isOpen, toggle }: Menu) {
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ delay: 0.8 }}
                     >
-                        <HeaderLink title="Comece" link="" />
+                        <HeaderLink title="Comece" link="startNow" />
                     </MotionBox>
                 </Flex>
             </Flex>

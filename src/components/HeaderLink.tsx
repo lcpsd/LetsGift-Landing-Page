@@ -1,5 +1,5 @@
-import { Box, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import { Box } from "@chakra-ui/react";
+import { Link } from "react-scroll"
 
 interface HeaderLinkProps {
     title: string;
@@ -9,7 +9,18 @@ interface HeaderLinkProps {
 export function HeaderLink({ title, link }: HeaderLinkProps) {
 
     return (
-        <Box as={Link} position="relative" href={link}>
+        <Box
+            as={Link}
+            position="relative"
+            to={link}
+            spy={true}
+            smooth={true}
+            hashSpy={true}
+            offset={50}
+            duration={500}
+            isDynamic={true}
+            ignoreCancelEvents={false}
+        >
             <Box
                 position="relative"
             >
