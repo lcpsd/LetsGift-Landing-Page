@@ -1,0 +1,6 @@
+{
+  "apiEndpoint": "https://letsgiftlandingpage.cdn.prismic.io/api/v2",
+  "libraries": [
+    "@/slices"
+  ]
+}

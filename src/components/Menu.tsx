@@ -1,9 +1,9 @@
-import { Button, Flex, Text, Icon, Box } from "@chakra-ui/react";
+import { Box, Flex, Icon } from "@chakra-ui/react";
+import { HiMenuAlt3 } from "react-icons/hi";
+import { IoMdClose } from "react-icons/io";
+import { MotionBox } from "../utils/chakraFramer";
 import { HeaderLink } from "./HeaderLink";
 import { Logo } from "./Logo";
-import { IoMdClose } from "react-icons/io"
-import { HiMenuAlt3 } from "react-icons/hi";
-import { MotionBox } from "../utils/chakraFramer";
 
 interface Menu {
     toggle: () => void;

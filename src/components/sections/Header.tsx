@@ -1,15 +1,38 @@
-import { Box, Button, Flex, Img, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, Flex, Img, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { InView } from "react-intersection-observer";
 import { useSections } from "../../context/Sections";
+import { client } from "../../services/prismicio";
 import { MotionButton, MotionFlex, MotionText } from "../../utils/chakraFramer";
 import { Menu } from "../Menu";
 import { Section } from "../Section";
 
+interface HeaderTextProps {
+    description: string;
+    vectorUrl: string;
+}
+
 export function HeaderSection() {
 
     const [isOpen, setIsOpen] = useState(false)
+    const [headerText, setHeaderText] = useState<HeaderTextProps>({} as HeaderTextProps)
     const { setPosition } = useSections()
+
+    async function fetchTextData() {
+        const allDocs = await client.getAllByType("headertext")
+
+        const sanitize = {
+            description: allDocs[0].data.description.text,
+            vectorUrl: allDocs[0].data.vector.url
+        }
+
+        setHeaderText(sanitize)
+        console.log(sanitize)
+    }
+
+    useEffect(() => {
+        fetchTextData()
+    }, [])
 
     return (
         <InView as="div" onChange={(inView, entry) => inView && setPosition(0)}>
@@ -49,7 +72,7 @@ export function HeaderSection() {
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.2 }}
                         >
-                            Nunca mais receba presentes ruins! Crie suas listas de presentes desejados e compartilhe com amigos e familiares.
+                            {headerText?.description}
                         </MotionText >
 
                         {/* Button */}
@@ -81,7 +104,7 @@ export function HeaderSection() {
                         pointerEvents="none"
                     >
                         <Img
-                            src="/images/vector02.svg"
+                            src={headerText?.vectorUrl}
                             h="100%"
                         />
                     </MotionFlex >

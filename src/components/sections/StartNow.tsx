@@ -1,7 +1,7 @@
-import { Button, Flex, Img, Text } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import { InView } from "react-intersection-observer";
 import { useSections } from "../../context/Sections";
-import { MotionBox, MotionFlex, MotionImage } from "../../utils/chakraFramer";
+import { MotionFlex, MotionImage } from "../../utils/chakraFramer";
 import { Section } from "../Section";
 
 export function StartNowSection() {

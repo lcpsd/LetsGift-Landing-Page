@@ -1,4 +1,4 @@
-import { Box, ChakraProps, ChakraStyledOptions, Flex, Img } from "@chakra-ui/react";
+import { ChakraProps, ChakraStyledOptions, Flex, Img } from "@chakra-ui/react";
 
 interface BgImageProps extends ChakraProps, ChakraStyledOptions {
     url: string;

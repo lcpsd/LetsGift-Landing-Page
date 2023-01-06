@@ -1,4 +1,4 @@
-import { Flex, Img, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { InView } from "react-intersection-observer";
 import { useSections } from "../../context/Sections";
 import { MotionBox, MotionFlex, MotionImage } from "../../utils/chakraFramer";
