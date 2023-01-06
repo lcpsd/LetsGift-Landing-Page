@@ -15,8 +15,8 @@ interface HeaderTextProps {
 export function HeaderSection() {
 
     const [isOpen, setIsOpen] = useState(false)
-    const [headerText, setHeaderText] = useState<HeaderTextProps>({} as HeaderTextProps)
     const { setPosition } = useSections()
+    const [headerText, setHeaderText] = useState<HeaderTextProps>({} as HeaderTextProps)
 
     async function fetchTextData() {
         const allDocs = await client.getAllByType("headertext")
@@ -27,7 +27,6 @@ export function HeaderSection() {
         }
 
         setHeaderText(sanitize)
-        console.log(sanitize)
     }
 
     useEffect(() => {

@@ -20,9 +20,6 @@ export function Indicator() {
         >
             {
                 sections?.map((node, index) => {
-
-                    console.log(`Index: ${index}, position: ${position}`)
-
                     return (
                         <Box
                             key={index}

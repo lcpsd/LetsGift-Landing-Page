@@ -1,13 +1,40 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { useEffect } from "react";
-import { InView, useInView } from "react-intersection-observer";
+import { PrismicRichText } from "@prismicio/react";
+import { useEffect, useState } from "react";
+import { InView } from "react-intersection-observer";
 import { useSections } from "../../context/Sections";
-import { MotionBox, MotionFlex, MotionImage } from "../../utils/chakraFramer";
+import { client } from "../../services/prismicio";
+import { MotionBox, MotionImage } from "../../utils/chakraFramer";
 import { Section } from "../Section";
+
+interface AboutTextProps {
+    title: string;
+    description: [];
+    vectorUrl: string;
+}
 
 export function AboutSection() {
 
     const { setPosition } = useSections()
+    const [aboutText, setAboutText] = useState<AboutTextProps>({} as AboutTextProps)
+
+    async function fetchTextData() {
+        const allDocs = await client.getAllByType("aboutdata")
+
+        const sanitize = {
+            title: allDocs[0].data.title[0].text,
+            description: allDocs[0].data.description,
+            vectorUrl: allDocs[0].data.vector.url
+        }
+
+        console.log(sanitize)
+
+        setAboutText(sanitize)
+    }
+
+    useEffect(() => {
+        fetchTextData()
+    }, [])
 
     return (
         <InView as="div" onChange={(inView, entry) => inView && setPosition(1)}>
@@ -45,16 +72,14 @@ export function AboutSection() {
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.5, ease: "easeIn" }}
                     >
-                        <Text fontSize={{ base: "2rem", lg: "3rem" }} color="secondary" fontWeight="bold">Sobre Nós</Text>
+                        <Text fontSize={{ base: "2rem", lg: "3rem" }} color="secondary" fontWeight="bold">
+                            {aboutText.title}
+                        </Text>
                         <Box fontSize="1.5rem" color="quaternary">
 
-                            <Text>
-                                O Letsgift é uma plataforma que permite criar listas de presentes desejados e compartilhá-las com amigos e familiares.
-                            </Text>
-
-                            <Text>
-                                Nossa missão é tornar a escolha de presentes mais fácil e garantir que você receba presentes que realmente importem para você.
-                            </Text>
+                            <PrismicRichText
+                                field={aboutText?.description}
+                            />
                         </Box>
                     </MotionBox>
                 </Flex >
