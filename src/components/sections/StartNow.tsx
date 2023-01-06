@@ -1,12 +1,39 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
+import { PrismicRichText } from "@prismicio/react";
+import { useEffect, useState } from "react";
 import { InView } from "react-intersection-observer";
 import { useSections } from "../../context/Sections";
+import { client } from "../../services/prismicio";
 import { MotionFlex, MotionImage } from "../../utils/chakraFramer";
 import { Section } from "../Section";
+
+interface prismicTextProps {
+    title: string;
+    description: [];
+    vectorUrl: string;
+}
 
 export function StartNowSection() {
 
     const { setPosition } = useSections()
+
+    const [text, setText] = useState<prismicTextProps>({} as prismicTextProps)
+
+    async function fetchTextData() {
+        const allDocs = await client.getAllByType("startnow")
+
+        const sanitize = {
+            title: allDocs[0].data.title[0].text,
+            description: allDocs[0].data.description,
+            vectorUrl: allDocs[0].data.vector.url
+        }
+
+        setText(sanitize)
+    }
+
+    useEffect(() => {
+        fetchTextData()
+    }, [])
 
     return (
         <InView as="div" onChange={(inView, entry) => inView && setPosition(4)}>
@@ -38,7 +65,7 @@ export function StartNowSection() {
                         textAlign={{ base: "center", lg: "left" }}
                         w="100%"
                     >
-                        Comece Agora!
+                        {text.title}
                     </Text>
 
                     <Text
@@ -46,9 +73,9 @@ export function StartNowSection() {
                         color="white"
                         textAlign={{ base: "center", lg: "left" }}
                     >
-                        Não fique mais recebendo presentes ruins! Comece a usar o Letsgift agora e garanta que receba presentes que realmente importem para você.
-
-                        É fácil, basta fazer login com sua conta Google e começar a criar suas listas de presentes.
+                        <PrismicRichText
+                            field={text?.description}
+                        />
                     </Text>
 
                     <Button
@@ -71,7 +98,7 @@ export function StartNowSection() {
                     order={{ base: 1, lg: 0 }}
                 >
                     <MotionImage
-                        src="/images/finish.svg"
+                        src={text.vectorUrl}
                         h="80%"
                         initial={{ x: -200 }}
                         animate={{ x: 100 }}
@@ -83,6 +110,6 @@ export function StartNowSection() {
                     />
                 </Flex>
             </Section>
-        </InView>
+        </InView >
     )
 }
