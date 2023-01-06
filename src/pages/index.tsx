@@ -16,7 +16,7 @@ export default function Home() {
         <Indicator />
 
         <BgImage
-          url="/images/vector01.svg"
+          url="/vector01.svg"
           bgColor={{ base: "secondaryDark", lg: "transparent" }}
         >
           <HeaderSection />
@@ -25,7 +25,7 @@ export default function Home() {
         <AboutSection />
 
         <BgImage
-          url="/images/vector03.svg"
+          url="/vector03.svg"
           bgColor={{ base: "secondary", lg: "transparent" }}
           bgSize={{ base: "0, 0", lg: "100%, 100%" }}
         >
@@ -35,7 +35,7 @@ export default function Home() {
         <FeaturesSection />
 
         <BgImage
-          url="/images/vector6.svg"
+          url="/vector6.svg"
         >
           <StartNowSection />
         </BgImage>
