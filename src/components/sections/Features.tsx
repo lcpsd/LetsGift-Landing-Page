@@ -1,13 +1,51 @@
 import { Box, Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
+import { useEffect, useRef, useState } from "react";
 import { InView } from "react-intersection-observer";
 import { useSections } from "../../context/Sections";
+import { client } from "../../services/prismicio";
 import { MotionImage, MotionSimpleGrid, MotionText } from "../../utils/chakraFramer";
 import { Card } from "../Card";
 import { Section } from "../Section";
 
+interface prismicTextProps {
+    title: string;
+    description: string;
+    vectorUrl: string;
+}
+
 export function FeaturesSection() {
 
     const { setPosition } = useSections()
+    const count = useRef(0.1)
+
+    const [text, setText] = useState<prismicTextProps[]>([])
+
+    async function fetchTextData() {
+        const allDocs = await client.getAllByType("advantages")
+
+        const sanitize = [
+            {
+                title: allDocs[0].data.title[0].text,
+                description: allDocs[0].data.description[0].text,
+                vectorUrl: allDocs[0].data.vector.url
+            },
+            {
+                title: allDocs[0].data.title2[0].text,
+                description: allDocs[0].data.description2[0].text,
+                vectorUrl: allDocs[0].data.vector2.url
+            },
+            {
+                title: allDocs[0].data.title3[0].text,
+                description: allDocs[0].data.description3[0].text,
+                vectorUrl: allDocs[0].data.vector3.url
+            }
+        ]
+        setText(sanitize)
+    }
+
+    useEffect(() => {
+        fetchTextData()
+    }, [])
 
     return (
         <InView as="div" onChange={(inView, entry) => inView && setPosition(3)}>
@@ -116,24 +154,24 @@ export function FeaturesSection() {
                     >
 
                         <Card
-                            src="/images/google.svg"
-                            title="Login"
-                            text="Crie ou entre em sua conta utilizando apenas a conta do google. Assim não é necesário decorar uma nova senha e nem se preocupar com formuários."
+                            src={text[0]?.vectorUrl}
+                            title={text[0]?.title}
+                            text={text[0]?.description}
+                            animationDelay={0.1}
+                        />
+
+                        <Card
+                            src={text[1]?.vectorUrl}
+                            title={text[1]?.title}
+                            text={text[1]?.description}
                             animationDelay={0.2}
                         />
 
                         <Card
-                            src="/images/money.svg"
-                            title="Fundos"
-                            text="Receba os fundos arrecadados diretamente em sua conta para utilizar como bem entender. Basta apenas criar o presente e receber."
-                            animationDelay={0.4}
-                        />
-
-                        <Card
-                            src="/images/infinity.svg"
-                            title="Infinidade"
-                            text="Crie quantas listas e presentes quiser! Fique a vontade para ter uma para cada evento especial da sua vida e descomplique cada um em apenas alguns Cliques."
-                            animationDelay={0.6}
+                            src={text[2]?.vectorUrl}
+                            title={text[2]?.title}
+                            text={text[2]?.description}
+                            animationDelay={0.3}
                         />
 
                     </MotionSimpleGrid>

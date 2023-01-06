@@ -1,4 +1,5 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
+import { PrismicRichText } from "@prismicio/react";
 import { useEffect, useState } from "react";
 import { InView } from "react-intersection-observer";
 import { useSections } from "../../context/Sections";
@@ -89,14 +90,14 @@ export function HowWorksSection() {
                     />
 
                     <Text color="tertiary" fontWeight="bold" fontSize={{ base: "2rem", lg: "3rem" }} textAlign="right" w="100%">
-                        Como Funciona
+                        {text.title}
                     </Text>
 
-                    <Text fontSize="1.5rem" color="white" textAlign="right">
-                        Para usar o Letsgift, basta fazer login com sua conta Google e começar a criar suas listas de presentes. É possível criar quantas listas quiser, dependendo das ocasiões e dos seus gostos pessoais.
-
-                        Quem está presenteando também pode pagar os presentes por porcentagem, fazendo com que outras pessoas possam dividir o valor do presente entre si.
-                    </Text>
+                    <Box fontSize="1.5rem" color="white" textAlign="right">
+                        <PrismicRichText
+                            field={text?.description}
+                        />
+                    </Box>
                 </MotionFlex>
             </Section>
         </InView>
