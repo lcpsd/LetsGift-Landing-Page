@@ -40,6 +40,7 @@ export function AboutSection() {
                 direction={{ base: "column", lg: "row" }}
                 gap={{ base: 2, lg: 5 }}
                 align="center"
+                h={{ base: "100%", lg: "100vh" }}
                 id="about"
             >
                 <Flex

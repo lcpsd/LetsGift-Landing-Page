@@ -52,7 +52,7 @@ export function HowWorksSection() {
                 >
                     <MotionImage
                         src={text.vectorUrl}
-                        h="80%"
+                        h={{ base: "100%", lg: "80%" }}
                         initial={{ y: 20 }}
                         animate={{ y: -20 }}
                         transition={{

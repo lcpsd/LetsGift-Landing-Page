@@ -99,7 +99,7 @@ export function StartNowSection() {
                 >
                     <MotionImage
                         src={text.vectorUrl}
-                        h="80%"
+                        h={{ base: "100%", lg: "80%" }}
                         initial={{ x: -200 }}
                         animate={{ x: 100 }}
                         transition={{

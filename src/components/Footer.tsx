@@ -13,7 +13,7 @@ export function Footer() {
             h="80px"
             w="100%"
         >
-            <Text>
+            <Text textAlign="center">
                 Copyright Letsgift {currentYear}. Todos os direitos reservados.
             </Text>
         </Flex>

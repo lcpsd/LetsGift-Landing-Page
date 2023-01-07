@@ -17,6 +17,7 @@ export function Indicator() {
             justify="center"
             gap={5}
             zIndex={100}
+            visibility={{ base: "hidden", lg: "visible" }}
         >
             {
                 sections?.map((node, index) => {

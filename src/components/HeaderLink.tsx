@@ -4,9 +4,10 @@ import { Link } from "react-scroll"
 interface HeaderLinkProps {
     title: string;
     link: string;
+    toggle?: () => void;
 }
 
-export function HeaderLink({ title, link }: HeaderLinkProps) {
+export function HeaderLink({ toggle = () => { }, title, link }: HeaderLinkProps) {
 
     return (
         <Box
@@ -20,6 +21,7 @@ export function HeaderLink({ title, link }: HeaderLinkProps) {
             duration={500}
             isDynamic={true}
             ignoreCancelEvents={false}
+            onClick={toggle}
         >
             <Box
                 position="relative"

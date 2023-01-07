@@ -1,4 +1,5 @@
 import { Box, Flex, Img, Text } from "@chakra-ui/react";
+import { PrismicRichText } from "@prismicio/react";
 import { useEffect, useState } from "react";
 import { InView } from "react-intersection-observer";
 import { useSections } from "../../context/Sections";
@@ -8,7 +9,7 @@ import { Menu } from "../Menu";
 import { Section } from "../Section";
 
 interface HeaderTextProps {
-    description: string;
+    description: [];
     vectorUrl: string;
 }
 
@@ -22,7 +23,7 @@ export function HeaderSection() {
         const allDocs = await client.getAllByType("headertext")
 
         const sanitize = {
-            description: allDocs[0].data.description.text,
+            description: allDocs[0].data.description,
             vectorUrl: allDocs[0].data.vector.url
         }
 
@@ -35,7 +36,7 @@ export function HeaderSection() {
 
     return (
         <InView as="div" onChange={(inView, entry) => inView && setPosition(0)}>
-            <Section id="header" h="110vh">
+            <Section id="header" h="100vh">
                 <Menu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
                 <Flex h="100% " w="100%" zIndex="1" justify="center" direction={{ base: "column", lg: "row" }} gap={{ base: 10, lg: 0 }}>
@@ -51,7 +52,7 @@ export function HeaderSection() {
                         <MotionFlex
                             initial={{ y: -50, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
-                            fontSize={{ base: "2.5rem", lg: "4rem", xl: "5rem" }}
+                            fontSize={{ base: "2rem", lg: "4rem", xl: "5rem" }}
                             fontWeight="bold"
                             w="100%"
                             textTransform="uppercase"
@@ -65,13 +66,13 @@ export function HeaderSection() {
 
                         {/* Subtitle */}
                         <MotionText
-                            fontSize={{ base: "1.5rem", lg: "2rem", xl: "2rem" }}
+                            fontSize={{ base: "1rem", lg: "2rem", xl: "2rem" }}
                             textAlign={{ base: "center", lg: "start" }}
                             initial={{ y: -50, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.2 }}
                         >
-                            {headerText?.description}
+                            <PrismicRichText field={headerText.description} />
                         </MotionText >
 
                         {/* Button */}
