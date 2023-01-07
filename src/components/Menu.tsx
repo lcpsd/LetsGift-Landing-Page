@@ -15,7 +15,7 @@ export function Menu({ isOpen, toggle }: Menu) {
     return (
         <Box zIndex={1000}>
             {/* Mobile Menu Button */}
-            <Box visibility={{ base: "visible", lg: "hidden" }} fontSize={40} cursor="pointer" zIndex={100}>
+            <Box visibility={{ base: "visible", lg: "hidden" }} fontSize={40} cursor="pointer">
                 <Icon
                     as={HiMenuAlt3}
                     position="fixed"

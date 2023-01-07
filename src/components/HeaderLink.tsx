@@ -17,7 +17,7 @@ export function HeaderLink({ toggle = () => { }, title, link }: HeaderLinkProps)
             spy={true}
             smooth={true}
             hashSpy={true}
-            offset={50}
+            offset={0}
             duration={500}
             isDynamic={true}
             ignoreCancelEvents={false}
