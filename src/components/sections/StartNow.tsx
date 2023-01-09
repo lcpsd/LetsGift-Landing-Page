@@ -86,7 +86,7 @@ export function StartNowSection() {
                         h={{ base: "60px", lg: "80px" }}
                         fontSize="2rem"
                     >
-                        Entrar
+                        Baixar
                     </Button>
                 </MotionFlex>
 

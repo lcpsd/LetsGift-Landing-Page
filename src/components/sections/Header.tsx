@@ -36,7 +36,7 @@ export function HeaderSection() {
 
     return (
         <InView as="div" onChange={(inView, entry) => inView && setPosition(0)}>
-            <Section id="header" h="100vh" mb="1rem">
+            <Section id="header" h={{ base: "100%", lg: "100vh" }} mb="1rem">
                 <Menu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
                 <Flex h="100% " w="100%" zIndex="1" justify="center" direction={{ base: "column", lg: "row" }} gap={{ base: 10, lg: 0 }}>
@@ -88,7 +88,7 @@ export function HeaderSection() {
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.3 }}
                         >
-                            Entrar
+                            Baixar
                         </MotionButton >
 
                     </Flex>
@@ -96,16 +96,21 @@ export function HeaderSection() {
                     {/* Vector */}
                     <MotionFlex
                         flex="1"
-                        align="center"
-                        justify="center"
-                        initial={{ x: 50, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 0.4 }}
+                        align={{ base: "center", lg: "flex-end" }}
+                        justify={{ base: "center", lg: "flex-start" }}
                         pointerEvents="none"
+                        initial={{ y: 20 }}
+                        animate={{ y: -20 }}
+                        transition={{
+                            duration: 5,
+                            ease: "easeInOut",
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                        }}
                     >
                         <Img
                             src={headerText?.vectorUrl}
-                            h="100%"
+                            h="90%"
                         />
                     </MotionFlex >
 
