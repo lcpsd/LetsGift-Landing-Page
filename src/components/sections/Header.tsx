@@ -36,7 +36,7 @@ export function HeaderSection() {
 
     return (
         <InView as="div" onChange={(inView, entry) => inView && setPosition(0)}>
-            <Section id="header" h="100vh">
+            <Section id="header" h="100vh" mb="1rem">
                 <Menu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
                 <Flex h="100% " w="100%" zIndex="1" justify="center" direction={{ base: "column", lg: "row" }} gap={{ base: 10, lg: 0 }}>
