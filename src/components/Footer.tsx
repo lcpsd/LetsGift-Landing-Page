@@ -16,6 +16,7 @@ export function Footer() {
             <Text textAlign="center">
                 Copyright Letsgift {currentYear}. Todos os direitos reservados.
             </Text>
+
         </Flex>
     )
 }
